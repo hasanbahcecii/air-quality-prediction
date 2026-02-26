@@ -1,0 +1,61 @@
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+
+# --- Virtual Environment ---
+venv/
+env/
+.venv/
+
+# --- Jupyter Notebook Checkpoints ---
+.ipynb_checkpoints/
+
+# --- Logs & Outputs ---
+*.log
+logs/
+*.out
+*.err
+
+# --- Data & Cache ---
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.json
+*.pickle
+*.h5
+*.db
+*.sqlite
+*.npy
+*.npz
+*.parquet
+*.pkl
+.cache/
+data/
+datasets/
+
+# --- IDE & Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- Streamlit & FastAPI ---
+.streamlit/
+uvicorn.log
+
+# --- Build & Distribution ---
+build/
+dist/
+*.tar.gz
+*.whl
