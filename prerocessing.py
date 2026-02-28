@@ -41,7 +41,7 @@ def create_sequences(data, window_size):
     y = []
     for i in range(len(data) - window_size):
         seq_x = data[i: i + window_size] # past window
-        seq_y = data[i + window_size] # future window
+        seq_y = data[i + window_size, 0] # future window: only NO2(GT) column 
         X.append(seq_x)
         y.append(seq_y)
     return np.array(X), np.array(y) 
