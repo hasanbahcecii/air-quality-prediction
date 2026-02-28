@@ -56,6 +56,17 @@ pip install -r requirements.txt
 ```
 
 ## ▶️ Usage
+
+**Data Analysis**
+```bash
+
+python load_and_explore.py
+```
+**Preprocessing**
+```bash
+
+python preprocessing.py
+```
 **Train the Model**
 
 ```bash
