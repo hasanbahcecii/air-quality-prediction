@@ -12,7 +12,7 @@ app = FastAPI(title="Air Quality Prediction API",
 
 #load scaler 
 scaler = joblib.load("scaler.pkl") 
-input_size = scaler.n_features_in_ #
+input_size = scaler.n_features_in_ 
 
 # MODEL parameters
 hidden_size = 64 # lstm cells
@@ -50,8 +50,9 @@ class SequenceInput(BaseModel):
 @app.post("/predict")
 def predict(data: SequenceInput):
 
-    seq = data.sequence
+    seq = data.sequence # take the sequence
 
+    # control
     if len(seq) != 72 or len(seq[0] != input_size):
         raise HTTPException(status_code= 400, detail= "Invalid data size. Expected data size is 72 x 7. ")
 
