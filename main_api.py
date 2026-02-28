@@ -53,7 +53,7 @@ def predict(data: SequenceInput):
     seq = data.sequence # take the sequence
 
     # control
-    if len(seq) != 72 or len(seq[0] != input_size):
+    if len(seq) != 72 or len(seq[0]) != input_size:
         raise HTTPException(status_code= 400, detail= "Invalid data size. Expected data size is 72 x 7. ")
 
     try:
@@ -63,12 +63,12 @@ def predict(data: SequenceInput):
 
         # predict with the model
         with torch.no_grad():
-            prediction = model(X_tensor).numpy()[0][0] 
+            prediction = model(X_tensor).numpy()[0][0] # only one number pred
 
         # denormalization
-        dummy = np.zeros((1, scaler.n_features_in_))  # all features
-        prediction = dummy[0][0]
-        inv_pred = scaler.inverse_transform(dummy[0][0])
+        dummy = np.zeros((1, scaler.n_features_in_))  # (1, 7) all features
+        dummy[0][0] = prediction
+        inv_pred = scaler.inverse_transform(dummy)[0][0]
 
         # json format return
         return {"predicted_NO2": round(inv_pred, 2)}
