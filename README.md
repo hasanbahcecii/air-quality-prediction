@@ -111,3 +111,9 @@ streamlit run app_streamlit.py
 - Normalization and sliding window techniques are applied.
 
 - Modular design ensures maintainability and scalability.
+
+---
+
+## 📜 License
+
+MIT
